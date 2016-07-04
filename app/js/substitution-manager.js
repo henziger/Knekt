@@ -241,7 +241,6 @@ function updateMessageDivs(substAlphabet) {
             $(elem).html(decryptedLine);
         }
     });
-    console.log("subst:", numChanged, "line(s) affected by update");
 
     return true;
 }
@@ -257,8 +256,6 @@ function substResetTool(type, message) {
     if (type == "fileChange" && message) {
         handlebarMessageDivs(message, alphabet);
     }
-
-    console.log("subst: resetting tool");
 
     handlebarAlphabetDivs(alphabet);
     handlebarCryptobetDivs(alphabet);

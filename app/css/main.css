@@ -19,6 +19,7 @@
  */
 @import url(vendor/dragula.css);
 @import url(vendor/jquery.mCustomScrollbar.css);
+@import url(vendor/ribbon.css);
 @font-face {
   font-family: NotoSansBold;
   src: url("../font/noto-sans-bold.ttf"); }

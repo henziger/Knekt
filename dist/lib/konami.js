@@ -110,8 +110,23 @@ var knight_mode = new Konami(function() {
 	audio.loop = true;
 	audio.play();
 	$(".graph-container-header, .graph-container-content, .reset-button," +
-		".text-wrapper, .tool-button, .trans-button, .vig-key, #about-button, #about-content," +
+		".text-wrapper, .tool-button, .trans-button, .vig-key, #apply-button, #about-button, #about-content," +
 		"#file-select, #lang-select, #vig-key").css("font-family", "Ringbearer, NotoSansBold, Arial");
+
+	var tb = $(".tool-button");
+	tb.css({"width": "82%", "margin-left": "35px", "border": "0"});
+	tb.queue(function() {
+		tb.css("background-color", "#3585b9");
+	});
+
+	$("#navbar").addClass("non-semantic-protector");
+
+	$("#subst-tool-button").addClass("ribbon");
+	$("#trans-tool-button").addClass("ribbon");
+	$("#vig-tool-button").addClass("ribbon");
+	$("#subst-tool-text").addClass("ribbon-content");
+	$("#trans-tool-text").addClass("ribbon-content");
+	$("#vig-tool-text").addClass("ribbon-content");
 
 	alert('Knight mode activated!')
 });
