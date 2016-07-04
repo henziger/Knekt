@@ -86,9 +86,9 @@
         </label>
         <select name="File" id="file-select" onchange="settingsChange('file')">
           <option selected disabled>None</option>
-          {{#number}}
-          <option value="{{this}}.cry">{{this}}.cry</option>
-          {{/number}}
+          {{#name}}
+          <option value="{{this}}">{{this}}</option>
+          {{/name}}
         </select>
       </form>
     </script>

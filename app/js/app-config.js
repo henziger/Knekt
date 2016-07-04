@@ -10,4 +10,4 @@ var appConfig = appConfig || {};
 appConfig.CRYPTO_TEXT_PATH = 'res';
 
 // The number of encrypted text files available
-appConfig.TEXT_FILE_COUNT = 102;
+appConfig.TEXT_FILE_COUNT = 8;

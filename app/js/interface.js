@@ -18,27 +18,10 @@ var initInterface = function() {
 };
 
 var createFileSelect = function() {
-    var fileIndices = [];
-
-    /*
-     * Takes a number and a width and returns the number as a string
-     * padded to the left with as many zeroes as needed to be width wide.
-     */
-    var pad = function(n, width) {
-        n = n + '';
-        if (n.length >= width) {
-            return n;
-        } else {
-            return new Array(width - n.length + 1).join('0') + n;
-        }
-    };
-
-    for (var i = 1; i <= appConfig.TEXT_FILE_COUNT; i++) {
-        fileIndices.push(pad(i, 3));
-    }
+    var fileNames = ['apple', 'banana', 'citrus', 'date', 'elk', 'fire', 'garlic', 'hotdog', 'iris'];
 
     handlebarExec('#file-select-template', '#file-section',
-        {number: fileIndices});
+        {name: fileNames});
 };
 
 /**

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.3.1">
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
   <meta charset="UTF-8">
   <title>Knekt</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -48,9 +48,9 @@
         </label>
         <select name="File" id="file-select" onchange="settingsChange('file')">
           <option selected disabled>None</option>
-          {{#number}}
-          <option value="{{this}}.cry">{{this}}.cry</option>
-          {{/number}}
+          {{#name}}
+          <option value="{{this}}">{{this}}</option>
+          {{/name}}
         </select>
       </form>
       </script>
