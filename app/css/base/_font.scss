@@ -10,7 +10,12 @@
   src: url("../font/noto-sans-bold.ttf");
 }
 
-$font-stack: NotoSansBold, Arial;
+@font-face {
+  font-family: Ringbearer;
+  src: url("../font/ringbearer.ttf");
+}
+
+$font-stack: NotoSansBold, Ringbearer, Arial;
 
 // Sets the size of the text in the text boxes displaying crypto text and
 // the result of different tools.
