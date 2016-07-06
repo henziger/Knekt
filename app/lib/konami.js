@@ -128,5 +128,5 @@ var knight_mode = new Konami(function() {
 	$("#trans-tool-text").addClass("ribbon-content");
 	$("#vig-tool-text").addClass("ribbon-content");
 
-	alert('Knight mode activated!')
+	alert('Knight mode activated!\n♪ Glorious morning - Waterflame ♪')
 });

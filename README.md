@@ -1,3 +1,5 @@
+This is my personal fork of Knekt and includes some changes compared to the [official Knekt repository](https://github.com/TDDD96-2016-Gr10/Knekt).
+
 # Knekt
 
 Knekt is an interactive web application inteded to be used as an aid
@@ -47,6 +49,7 @@ Knekt uses the following JavaScript libraries:
   * [Handlebars](http://handlebarsjs.com/)
   * [Dragula](http://bevacqua.github.io/dragula/)
   * [Hashcode](https://github.com/stuartbannerman/hashcode)
+  * [Konami-JS](https://github.com/snaptortoise/konami-js)
   
 For unit testing we've used [Karma][] and [QUnit][].
 [Karma]: http://karma-runner.github.io/0.13/index.html
