@@ -2,7 +2,7 @@ This is my personal fork of Knekt and includes some changes compared to the [off
 
 # Knekt
 
-Knekt is an interactive web application inteded to be used as an aid
+Knekt is an interactive web application intended to be used as an aid
 for teaching classical encryption methods and their weaknesses.
 
 ## Why is the application called Knekt?
