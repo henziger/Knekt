@@ -35,11 +35,9 @@ comments in the JavaScript source code. To read it, open docs/index.html
 in any browser.
 
 ## Code style guidelines
-Our ambition is to follow Google's style guides for [HTML/CSS][style1]
-and [JavaScript][style2], with the exception that we use 4 space
+Our ambition is to follow Google's style guides for [HTML/CSS](http://google.github.io/styleguide/htmlcssguide.xml)
+and [JavaScript](http://google.github.io/styleguide/javascriptguide.xml), with the exception that we use 4 space
 indentation for JavaScript.
-[style1]: http://google.github.io/styleguide/htmlcssguide.xml
-[style2]: http://google.github.io/styleguide/javascriptguide.xml
 
 ## Libraries and dependencies
 
@@ -51,17 +49,13 @@ Knekt uses the following JavaScript libraries:
   * [Hashcode](https://github.com/stuartbannerman/hashcode)
   * [Konami-JS](https://github.com/snaptortoise/konami-js)
   
-For unit testing we've used [Karma][] and [QUnit][].
-[Karma]: http://karma-runner.github.io/0.13/index.html
-[QUnit]: https://qunitjs.com/
+For unit testing we've used [Karma](http://karma-runner.github.io/0.13/index.html) and [QUnit](https://qunitjs.com/).
 
 ## Building the application
 Our build system minimizes/optimizes the JavaScript code and updates the index.html file.
-The build system requires [Closure Compiler][compiler] and [HTML Tidy][tidy].
+The build system requires [Closure Compiler](https://developers.google.com/closure/compiler/) and [HTML Tidy](http://www.html-tidy.org/).
 To generate a new build in the dist/ directory, run *make*. See the
 [Makefile](Makefile) for further details.
-[compiler]: https://developers.google.com/closure/compiler/
-[tidy]: http://www.html-tidy.org/
 
 ## Contributors :frog:
 - [Fredrik Bergstrand](https://github.com/fredrikbergstrand)
