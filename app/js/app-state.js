@@ -62,10 +62,33 @@ function AppState(initLang, initFileName) {
      * visual indication that the settings have changed and executes the
      * routines performing the changes.
      */
-    this.applySettings = function () {
+    this.applySettings = function (setting) {
         var langSel = $('#lang-select');
         var fileSel = $('#file-select');
         var chg = 'changed-setting';
+        var last = 'last-setting';
+        var curState;
+        var select;
+
+        if (setting === 'lang') {
+            curState = appState.getLang();
+            select = langSel;
+        } else if (setting === 'file') {
+            curState = appState.getFileName();
+            select = fileSel;
+        }
+
+        if (select.val() !== curState) {
+            select.addClass(chg);
+            select.children().each(function () {
+                if ($(this).val() === curState) {
+                    $(this).addClass(last);
+                }
+            });
+        } else {
+            select.removeClass(chg);
+            $('option:selected', select).removeClass(last);
+        }
 
         if (langSel.hasClass(chg)) {
             _lang = langSel.val();
@@ -156,47 +179,6 @@ var appState;
 function initAppState() {
     // These are needed because the form doesn't reset on a "soft" page reload
     appState = new AppState($('#lang-select').val(), $('#file-select').val());
-    $('#apply-button').prop('disabled', true);
-}
-
-
-/**
- * Gets called whenever a setting is changed by the user. Visually marks the
- * changed setting.
- * @param {String} setting string indicating the changed setting
- */
-function settingsChange(setting) {
-    var fileSel = $('#file-select');
-    var langSel = $('#lang-select');
-    var chg = 'changed-setting';
-    var last = 'last-setting';
-    var curState;
-    var select;
-
-    if (setting === 'lang') {
-        curState = appState.getLang();
-        select = langSel;
-    } else if (setting === 'file') {
-        curState = appState.getFileName();
-        select = fileSel;
-    } else {
-        throw Error('No setting of type: ' + setting);
-    }
-
-    if (select.val() !== curState) {
-        select.addClass(chg);
-        select.children().each(function () {
-            if ($(this).val() === curState) {
-                $(this).addClass(last);
-            }
-        });
-    } else {
-        select.removeClass(chg);
-        $('option:selected', select).removeClass(last);
-    }
-
-    var applyState = !(langSel.hasClass(chg) || fileSel.hasClass(chg));
-    $('#apply-button').prop('disabled', applyState);
 }
 
 /**

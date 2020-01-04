@@ -75,7 +75,7 @@ function handlebarMessageDivs(message, alphabet) {
     } else if (typeof alphabet !== "object") {
         throw Error("alphabet must be an object");
     }
-    var rowLength = 60;
+    var rowLength = 40;
     var neededRows = Math.ceil(message.length / rowLength);
 
     var context = {

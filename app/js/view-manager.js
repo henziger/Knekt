@@ -130,6 +130,7 @@ function setVisibilityOf(container, visible) {
     var arrow = container.children(headerClass).children(0);
 
     $(arrow).removeClass();
+    $(arrow).addClass('arrow');
     $(arrow).addClass(visible ? 'arrow-down' : 'arrow-right');
     if (visible) {
         $(content).stop().slideDown(200); // .stop() stops previous animations

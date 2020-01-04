@@ -151,13 +151,11 @@ body:before {
   color: white;
   font-family: NotoSansBold, Ringbearer, Arial; }
 
-#file-section {
-  padding: 2em 0 0 0; }
-
 #file-select, #lang-select {
   float: right;
   margin: 0 5px 0 0;
   width: 7em;
+  max-width: 96%;
   font-family: NotoSansBold, Ringbearer, Arial; }
 
 .changed-setting {
@@ -176,10 +174,10 @@ body:before {
   position: absolute;
   top: 0;
   left: 10%;
+  width: 65%;
   height: 100%;
-  width: 55%;
   background-color: #dcdce3;
-  overflow: hidden;
+  overflow: auto;
   /* Don't let inside content get outside this div */ }
 
 #util-bar {
@@ -188,7 +186,7 @@ body:before {
   top: 0;
   right: 0;
   height: 100%;
-  width: 34.85%;
+  width: 24%;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: #dcdce3; }
@@ -211,7 +209,7 @@ img {
   content: " ";
   position: absolute;
   width: 0.15%;
-  right: 34.85%;
+  right: 24%;
   height: 98%;
   top: 1%;
   border-radius: 8px; }
@@ -286,9 +284,11 @@ table {
   color: white;
   cursor: pointer;
   margin: auto;
-  width: 100%;
   background-color: #3585b9;
-  text-align: center; }
+  text-align: start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
 
 .graph-container-header:hover {
   background: #4d99cb;
@@ -296,10 +296,9 @@ table {
 
 #logotype {
   width: 100%;
-  padding-top: 5vh; }
+  padding-top: 1vh; }
 
 .graph-container-content {
-  width: 100%;
   display: none;
   font-family: NotoSansBold, Ringbearer, Arial;
   margin: auto;
@@ -312,34 +311,32 @@ table {
   width: 100%;
   height: 200px; }
 
-.arrow-right {
-  display: inline;
-  margin-left: 10px;
+.arrow {
+  display: block;
+  margin-right: 5px;
   float: left;
   width: 0;
   height: 0;
+  -moz-transform: scale(0.9999);
+  transform: scale(0.9999); }
+
+.arrow-right {
+  margin-left: 10px;
   border-top: 10px solid rgba(255, 255, 255, 0);
   border-bottom: 10px solid rgba(255, 255, 255, 0);
-  border-left: 15px solid white;
-  -moz-transform: scale(0.9999); }
+  border-left: 15px solid white; }
 
 .arrow-down {
-  display: inline;
   margin-left: 5px;
-  margin-top: 5px;
-  float: left;
-  width: 0;
-  height: 0;
   border-left: 10px solid rgba(255, 255, 255, 0);
   border-right: 10px solid rgba(255, 255, 255, 0);
-  border-top: 15px solid white;
-  -moz-transform: scale(0.9999); }
+  border-top: 15px solid white; }
 
 #about-close-button {
   position: absolute;
   top: 1px;
   right: 1px;
-  font-size: 20px;
+  font-size: 30px;
   margin: 0 -4px 0 0;
   border: 0 solid transparent;
   background-color: transparent; }
@@ -358,10 +355,10 @@ table {
 #about-overlay {
   display: none;
   position: absolute;
-  width: 32%;
-  height: 60%;
-  top: 20%;
-  left: 34%;
+  top: 5%;
+  left: 20%;
+  margin-left: -15%;
+  margin-right: 5%;
   background-color: #dcdce3;
   border-radius: 10px;
   box-shadow: 0 0 0 3000px rgba(0, 0, 0, 0.5);
@@ -563,8 +560,7 @@ table {
 #subst-tool {
   font-family: monospace;
   text-transform: uppercase;
-  width: 100%;
-  height: 100%; }
+  width: 100%; }
 
 #subst-tool-wrapper {
   width: 100%;
@@ -692,7 +688,7 @@ table {
   bottom: 0;
   left: 0;
   margin: 5px 10px 10px 10px;
-  overflow-y: hidden; }
+  overflow-y: auto; }
 
 #vig-result {
   resize: none;
@@ -721,19 +717,15 @@ table {
   display: flex; }
 
 #vig-key-area {
-  width: 70%;
-  margin: 2% 14% 2% 16%; }
+  margin: 2% 14% 2% 16%;
+  cursor: pointer; }
 
 #vig-key-area > div {
   display: inline-block;
   vertical-align: middle; }
 
-#vig-buttons {
-  width: 7%; }
-
 #vig-buttons > div {
-  margin-bottom: 3px;
-  line-height: 1.7em;
+  line-height: 1.2em;
   box-sizing: border-box;
   background: #e3e3e8;
   background: -moz-linear-gradient(#f1f1f4, #dcdce3);
@@ -743,7 +735,10 @@ table {
   vertical-align: middle;
   cursor: pointer;
   font-size: larger;
-  font-weight: bold; }
+  font-weight: bold;
+  float: left;
+  width: 20px;
+  margin-right: 4px; }
 
 #vig-buttons > div:hover {
   border: 1px solid #737373; }
@@ -757,17 +752,6 @@ table {
   position: relative;
   top: 0;
   right: 0; }
-
-.button-plus {
-  position: relative;
-  float: top; }
-
-.button-minus {
-  position: relative;
-  float: bottom; }
-
-#vig-key {
-  width: 90%; }
 
 .vigenere-key {
   background: #3585b9;

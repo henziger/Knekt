@@ -13,7 +13,7 @@
 
 /* Defines variables used in JavaScript */
 :root{
-  --chartFont: $font-stack; // Set font used in high chart
+  --chartFont: NotoSansBold, Ringbearer, Arial; // Set font used in high chart
   --bar-color: #8dd2a3; // Bar color, currently same as graph_header
 }
 
@@ -121,14 +121,11 @@ body:before {
   font-family: $font-stack;
 }
 
-#file-section {
-  padding: 2em 0 0 0;
-}
-
 #file-select, #lang-select {
   float: right;
   margin: 0 5px 0 0;
   width: 7em;
+  max-width: 96%;
   font-family: $font-stack;
 }
 
@@ -151,10 +148,10 @@ body:before {
   position: absolute;
   top: 0;
   left: 10%;
+  width: 65%;
   height: 100%;
-  width: 55%;
   background-color: $color-primary-2;
-  overflow: hidden; /* Don't let inside content get outside this div */
+  overflow: auto; /* Don't let inside content get outside this div */
 }
 
 #util-bar {
@@ -163,7 +160,7 @@ body:before {
   top: 0;
   right: 0;
   height: 100%;
-  width: 34.85%;
+  width: 24%;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: $color-primary-2;
@@ -189,7 +186,7 @@ img {
   content: " ";
   position: absolute;
   width: 0.15%;
-  right: 34.85%;
+  right: 24%;
   height: 98%;
   top: 1%;
   border-radius: 8px;
@@ -280,9 +277,11 @@ table {
   color: white;
   cursor: pointer;
   margin: auto;
-  width: 100%;
   background-color: $color-primary-0;
-  text-align : center;
+  text-align : start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .graph-container-header:hover{
@@ -292,12 +291,11 @@ table {
 
 #logotype{
   width: 100%;
-  padding-top: 5vh;
+  padding-top: 1vh;
 }
 
 
 .graph-container-content{
-  width: 100%;
   display: none;
   font-family: $font-stack;
   margin: auto;
@@ -312,36 +310,35 @@ table {
   height: 200px;
 }
 
-.arrow-right {
-  display: inline;
-  margin-left: 10px; //Must be margin-left of arrow-down*2 to stay still
-  float:left;
-  width: 0;
-  height: 0;
-  border-top: 10px solid rgba(255, 255, 255, 0);
-  border-bottom: 10px solid rgba(255, 255, 255, 0);
-  border-left: 15px solid white;
-  -moz-transform: scale(.9999); //To smooth the edge in firefox 38
-}
-
-.arrow-down {
-  display: inline;
-  margin-left: 5px;
-  margin-top: 5px;
+.arrow {
+  display: block;
+  margin-right: 5px;
   float: left;
   width: 0;
   height: 0;
+  -moz-transform: scale(.9999); //To smooth the edge in firefox 38
+  transform: scale(.9999);
+}
+
+.arrow-right {
+  margin-left: 10px; //Must be margin-left of arrow-down*2 to stay still
+  border-top: 10px solid rgba(255, 255, 255, 0);
+  border-bottom: 10px solid rgba(255, 255, 255, 0);
+  border-left: 15px solid white;
+}
+
+.arrow-down {
+  margin-left: 5px;
   border-left: 10px solid rgba(255, 255, 255, 0);
   border-right: 10px solid rgba(255, 255, 255, 0);
   border-top: 15px solid white;
-  -moz-transform: scale(.9999); //To smooth the edge in firefox 38
 }
 
 #about-close-button {
   position: absolute;
   top: 1px;
   right: 1px;
-  font-size: 20px;
+  font-size: 30px;
   margin: 0 -4px 0 0;
   border: 0 solid transparent;
   background-color: transparent;
@@ -363,10 +360,10 @@ table {
 #about-overlay {
   display: none;
   position: absolute;
-  width: 32%;
-  height: 60%;
-  top: 20%;
-  left: 34%;
+  top: 5%;
+  left: 20%;
+  margin-left: -15%;
+  margin-right: 5%;
   background-color: $color-primary-2;
   border-radius: 10px;
   box-shadow: 0 0 0 3000px rgba(0, 0, 0, .5);

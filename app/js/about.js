@@ -9,7 +9,7 @@
  * information pop-up.
  */
 function initAbout() {
-    var aboutBtn = $('#about-button');
+    var logo = $('#logo-wrapper');
     var aboutCloseBtn = $('#about-close-button');
     var about = $('#about-overlay');
 
@@ -22,9 +22,8 @@ function initAbout() {
         }
     };
 
-    aboutBtn.click(function () {
+    logo.click(function () {
         about.show();
-        $(document).click(aboutClickClose);
     });
 
     aboutCloseBtn.click(function () {

@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="UTF-8">
   <title>Knekt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="icon" href="img/favicon.png?v=2" type="image/png">
   <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon">
-  <script src="lib/jquery-1.12.0.js">
-  </script>
-  <script src="lib/handlebars-v4.0.5.js">
-  </script>
-  <script src="lib/highcharts.js">
-  </script>
-  <script src="lib/highcharts-noData.js">
-  </script>
-  <script src="lib/dragula.js">
-  </script>
-  <script src="lib/hashcode.js">
-  </script>
-  <script src="lib/jquery.mCustomScrollbar.js">
-  </script>
-  <script src="lib/konami.js">
-  </script>
-  <script src="js/knekt.min.js">
-  </script>
+  <script src="lib/jquery-1.12.0.js"></script>
+  <script src="lib/handlebars-v4.0.5.js"></script>
+  <script src="lib/highcharts.js"></script>
+  <script src="lib/highcharts-noData.js"></script>
+  <script src="lib/dragula.js"></script>
+  <script src="lib/hashcode.js"></script>
+  <script src="lib/jquery.mCustomScrollbar.js"></script>
+  <script src="lib/konami.js"></script>
+  <script src="js/knekt.min.js"></script>
 </head>
 <body>
   <!-- The navigation bar to the left in the application view
  note: the parameters to viewChange are tightly coupled with their ID's
  further down on the page -->
   <div id="navbar">
-    <div id="logo-wrapper" onclick="viewChange('home-view', this);"><img id="logotype" src="img/Logo.png" alt=
-    ""></div><br>
-    <br>
+    <div id="logo-wrapper"><img id="logotype" src="img/Logo.png" alt=""></div>
     <ul id="tool-button-list">
       <li><button id="subst-tool-button" class="tool-button" onclick="viewChange('subst-tool', this);"><span id=
       "subst-tool-text">Substitution</span></button></li>
@@ -44,22 +34,22 @@
     </ul>
     <div id="file-section">
       <script id="file-select-template" type="text/x-handlebars-template">
-      <form id="file-form">
-        <label for="file-select">
-          <img src="img/ic_description_white_24dp_1x.png" alt="File">
-        </label>
-        <select name="File" id="file-select" onchange="settingsChange('file')">
-          <option selected disabled>None</option>
-          {{#name}}
-          <option value="{{this}}">{{this}}</option>
-          {{/name}}
-        </select>
-      </form>
+            <form id="file-form">
+            <label for="file-select">
+              <img src="img/ic_description_white_24dp_1x.png" alt="File">
+            </label>
+            <select name="File" id="file-select" onchange="appState.applySettings('file')">
+              <option selected disabled>None</option>
+              {{#name}}
+              <option value="{{this}}">{{this}}</option>
+              {{/name}}
+            </select>
+          </form>
       </script>
     </div>
     <form id="lang-form" name="lang-form">
       <label for="lang-select"><img src="img/ic_public_white_24dp_1x.png" alt="Language"></label> <select name=
-      "Language" id="lang-select" onchange="settingsChange('lang')">
+      "Language" id="lang-select" onchange="appState.applySettings('lang')">
         <option value="en">
           English
         </option>
@@ -67,10 +57,7 @@
           Swedish
         </option>
       </select>
-    </form><button id="apply-button" onclick="appState.applySettings()" disabled>Apply settings</button>
-    <div>
-      <button id="about-button">About</button>
-    </div>
+    </form>
   </div><!-- The cipher tool view -->
   <div id="cipher-tool">
     <div id="subst-tool">
@@ -93,6 +80,7 @@
               {{/each}}
               </script> 
               <script id="crypto-alphabet-hbs" type="text/x-handlebars-template">
+
               {{#each letters}}
               <span contenteditable="true" ondrag="event.preventDefault();"
                     ondrop="substDrop(event)" ondragover="event.preventDefault();"
@@ -201,7 +189,7 @@
     <div id="util-tools" class="graph-area">
       <div id="language-stats-area-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Language letter statistics
+          <div class="arrow arrow-right"></div>Language letter statistics
         </div>
         <div class="graph-container-content">
           <div id="language-stats-area" class="graph-stats"></div>
@@ -209,7 +197,7 @@
       </div>
       <div id="crypto-stats-area-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Text letter statistics
+          <div class="arrow arrow-right"></div>Text letter statistics
         </div>
         <div class="graph-container-content">
           <div id="crypto-stats-area" class="graph-stats"></div>
@@ -235,7 +223,7 @@
       </script>
       <div id="language-bigram-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Language bigram statistics
+          <div class="arrow arrow-right"></div>Language bigram statistics
         </div>
         <div class="graph-container-content">
           <div id="language-bigram-table"></div>
@@ -243,7 +231,7 @@
       </div>
       <div id="text-bigram-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Text bigram statistics
+          <div class="arrow arrow-right"></div>Text bigram statistics
         </div>
         <div class="graph-container-content">
           <div id="text-bigram-table"></div>
@@ -251,7 +239,7 @@
       </div>
       <div id="language-trigram-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Language trigram statistics
+          <div class="arrow arrow-right"></div>Language trigram statistics
         </div>
         <div class="graph-container-content">
           <div id="language-trigram-table"></div>
@@ -259,7 +247,7 @@
       </div>
       <div id="text-trigram-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Text trigram statistics
+          <div class="arrow arrow-right"></div>Text trigram statistics
         </div>
         <div class="graph-container-content">
           <div id="text-trigram-table"></div>
@@ -267,7 +255,7 @@
       </div>
       <div id="bigram-factor-container" class="graph-container">
         <div class="graph-container-header" onclick="expandCollapseGraph(this)">
-          <div class="arrow-right"></div>Bigram distance counter
+          <div class="arrow arrow-right"></div>Bigram distance counter
         </div>
         <div class="graph-container-content">
           <div id="bigram-factor-area">
